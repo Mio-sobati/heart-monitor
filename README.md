@@ -5,6 +5,7 @@
 ![UI](https://img.shields.io/badge/UI-Material_You_3-red.svg)
 
 An advanced, commercial-grade open-source wearable medical gadget designed for real-time health monitoring, smart fall detection, and emergency SOS alerts. Built with ESP32-C3 and features a fully responsive iOS-style Captive Portal web dashboard.
+🇮🇷 برای مطالعه توضیحات به زبان فارسی کلیک کنید](README-fa.md)
 
 ## ✨ Key Features
 
