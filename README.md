@@ -1,20 +1,24 @@
 # 🩺 Smart Wearable Medical Monitor (ESP32-C3)
 
-![Version](https://img.shields.io/badge/Version-28.0-blue.svg)
+[🦁☀️ برای مطالعه توضیحات به زبان فارسی کلیک کنید](README-fa.md)
+
+![Version](https://img.shields.io/badge/Version-28.0_Pro-blue.svg)
 ![Platform](https://img.shields.io/badge/Platform-ESP32--C3-green.svg)
 ![UI](https://img.shields.io/badge/UI-Material_You_3-red.svg)
 
-An advanced, commercial-grade open-source wearable medical gadget designed for real-time health monitoring, smart fall detection, and emergency SOS alerts. Built with ESP32-C3 and features a fully responsive iOS-style Captive Portal web dashboard.
+An advanced, commercial-grade open-source wearable medical gadget designed for real-time health monitoring, smart fall detection, and emergency SOS alerts. Built with the powerful ESP32-C3, it features a fully responsive, iOS-style **Captive Portal** web dashboard.
 
 ## ✨ Key Features
 
-- **❤️ Deep Tissue Pulse Oximetry:** Optimized `MAX30102` settings (Anti-Saturation & Peak Skipping filters) for accurate arm/wrist measurements.
-- **🤸 Smart Fall Detection:** Uses `GY-25` (MPU6050) with a dynamic delta-acceleration algorithm and a 6-second consciousness check to prevent false alarms.
-- **😰 Panic Attack Detection:** Monitors abnormal heart rate spikes combined with immobility.
-- **🚨 Multi-Function SOS Button:** 1 click to cancel alarms, 5 quick clicks for manual SMS emergency requests.
-- **📱 Captive Portal Dashboard:** No app required! Connect to the gadget's WiFi and the dashboard pops up automatically (iOS/Android).
-- **🎨 Beautiful UI:** Dual-language (EN/FA), Dark/Light mode, and an iOS-style capsule navigation bar.
-- **✉️ SMS Alerts:** Real-time emergency SMS dispatch via `SIM800C`.
+- **❤️ Deep Tissue Pulse Oximetry:** Custom-engineered `MAX30102` configuration (Anti-Saturation, 400Hz sample rate, 8192 ADC range) optimized specifically for accurate reading through thick arm/wrist tissue. No more beat skipping!
+- **🤸 Smart Fall Detection:** Powered by the `GY-25` (MPU6050) module. Uses a dynamic delta-acceleration algorithm alongside a 6-second consciousness check to eliminate false alarms completely.
+- **😰 Panic Attack Detection:** Intelligently monitors abnormal heart rate spikes combined with physical immobility to detect severe stress or panic attacks.
+- **🚨 Multi-Function SOS Button:** 
+  - **1 Click:** Cancels active alarms (and sends a cancellation SMS).
+  - **5 Quick Clicks:** Triggers a manual SOS emergency SMS.
+- **📱 True Captive Portal:** No app required! Connect to the gadget's WiFi and the dashboard pops up automatically on your iOS/Android device (bypassing OS restrictions via a local `8.8.8.8` DNS trick).
+- **🎨 Beautiful UI:** Dual-language support (EN/FA), Dark/Light mode toggle, and a sleek iOS-style capsule navigation bar.
+- **✉️ SMS Alerts:** Real-time emergency dispatch with precise event logging via the `SIM800C` module.
 
 ## 🛠️ Hardware Requirements
 
@@ -39,17 +43,17 @@ An advanced, commercial-grade open-source wearable medical gadget designed for r
 | **MAX30102 SDA**| `GPIO 8` | I2C Data |
 | **MAX30102 SCL**| `GPIO 9` | I2C Clock |
 
-## 🚀 How to Use (Captive Portal)
+## 🚀 How to Use (Captive Portal Magic)
 
-1. Power on the device.
-2. Search for WiFi networks on your phone and connect to **Heart_Monitor**.
-3. *Do not open a browser!* Your phone will automatically pop up the medical dashboard.
-4. Go to the **Settings ⚙️** tab to configure your emergency phone number, WiFi password, and medical thresholds.
+1. Power on the device. (Hold the button during boot if you want to force AP config mode).
+2. Search for WiFi networks on your smartphone and connect to **Heart_Monitor**.
+3. *Do not open any browser!* Wait a few seconds, and your phone will automatically pop up the medical dashboard.
+4. Navigate to the **Settings ⚙️** tab to configure your emergency mobile number, WiFi password, and customized medical thresholds.
 
 ## 📚 Libraries Required
 
-Ensure you have the following libraries installed in your Arduino IDE:
-- `SparkFun MAX3010x Pulse and Proximity Sensor Library`
+Ensure you have the following libraries installed in your Arduino IDE before compiling:
+- `SparkFun MAX3010x Pulse and Proximity Sensor Library` (Make sure to include your custom `heartRate.h`)
 - `Preferences` (ESP32 Built-in)
 - `WiFi`, `WebServer`, `DNSServer` (ESP32 Built-in)
 
